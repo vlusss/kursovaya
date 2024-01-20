@@ -1,0 +1,29 @@
+{% extends 'main/base_template.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="flex-column flex-center">
+        <h1 class="page-header">Регистрация</h1>
+    </div>
+    <div class="content-section">
+    {% if success_reg == True %}
+        <div class="flex-row flex-center">
+            <h2>Пользователь {{ request.user.username }} успешно создан.</h2>
+        </div>
+    {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Добро пожаловать! Впервые у нас?</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div style="margin-top: 25px;" class="form-group flex-center flex-column flex-gap-25">
+                <button class="btn btn-outline-info submit-button" type="submit">Регистрация</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Уже есть аккаунт? <a class="ml-2" href="{% url 'login' %}">Вход</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

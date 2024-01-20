@@ -1,0 +1,18 @@
+{% extends 'main/base_template.html' %}
+{% load static %}
+{% block title %}
+
+    Ой ой ой, что-то пошло не так
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="flex-column flex-center flex-gap-25">
+        <h1 class="page-header"> Что-то явно пошло не так... </h1>
+        <img src="{% static 'main/images/500.gif' %}" alt="">
+        <h4>И в мой сервер стреляли, и он упал.</h4>
+    </div>
+
+{% endblock %}

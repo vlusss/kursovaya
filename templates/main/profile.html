@@ -1,0 +1,59 @@
+{% extends 'main/base_template.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Профиль
+{% endblock %}
+
+{% block content %}
+    <div class="flex-column flex-center">
+    <h1 class="page-header">Профиль</h1>
+    </div>
+    <form class="flex-column flex-center flex-gap-10" method="POST">
+        {% csrf_token %}
+        <div class="flex-row flex-center flex-gap-10">
+            <span>Имя пользователя:</span>
+            {{ form.username }}
+        </div>
+        <div class="flex-row flex-center flex-gap-100">
+            <div class="flex-column flex-center flex-gap-10 input-field-icon input-field-icon-text">
+                <span>Имя:</span>
+                {{ form.first_name }}
+            </div>
+            <div class="flex-column flex-center flex-gap-10 input-field-icon input-field-icon-text">
+                <span>Фамилия:</span>
+                {{ form.last_name }}
+            </div>
+        </div>
+        <div class="flex-row flex-center flex-gap-100">
+            <div class="flex-column flex-center flex-gap-10 input-field-icon input-field-icon-email">
+                <span>Email:</span>
+                {{ form.email }}
+            </div>
+            <div class="flex-column flex-center flex-gap-10 input-field-icon input-field-icon-date">
+                <span>Дата регистрации:</span>
+                {{ form.date_joined }}
+            </div>
+        </div>
+        <button class="submit-button" type="submit">Изменить</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <hr>
+    {% if user_orders.count > 0 %}
+        <table>
+        <caption>Последние заказы</caption>
+        <tr><th>Заказ</th><th>Дата заказа</th><th>Автомобиль</th>
+            <th>Время использования (минут)</th><th>Сумма (руб.)</th></tr>
+        {% for order in user_orders %}
+            <tr><td>{{ order.id }}</td><td>{{ order.creation_date }}</td>
+                <td><a href="{% url 'car_by_id' order.car.id %}">{{ order.car.car_model }}</a></td>
+            <td>{{ order.rent_time }}</td><td>{{ order.total_price }}</td></tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <table style="width: 100%;">
+        <caption>Здесь пока пусто.</caption>
+        </table>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+<ul class="menu">
+    <li class="menu-item"><a class="ref-no-decor" href="{% url 'main' %}"><i class="fa fa-map"></i> Главная</a></li>
+    {% if request.user.is_authenticated %}
+        <li class="menu-item"><a class="ref-no-decor" href="{% url 'profile' %}"><i class="fa fa-user"></i> Профиль</a></li>
+    {% endif %}
+    <li class="menu-item"><a class="ref-no-decor" href="{% url 'cars' %}"><i class="fa fa-car"></i> Прокат/Аренда</a></li>
+    <li class="menu-item"><a class="ref-no-decor" href="{% url 'about' %}"><i class="fa fa-address-card"></i> Справка/О нас</a></li>
+</ul>
+  <div class='light x1'></div>
+  <div class='light x2'></div>
+  <div class='light x3'></div>
+  <div class='light x4'></div>
+  <div class='light x5'></div>
+  <div class='light x6'></div>
+  <div class='light x7'></div>
+  <div class='light x8'></div>
+  <div class='light x9'></div>
+<hr>
+    {% if not request.user.is_authenticated %}
+        <div class="auth-block flex-row flex-center">
+        <p>
+            <i class="fa fa-gears"></i>
+            <a style="color: white" href="{% url 'login' %}"> Вход</a> / <a style="color: white;" href="{% url 'registration' %}">Регистрация</a>
+        </p>
+    </div>
+    {% else %}
+        <div class="auth-block flex-column flex-center">
+            <p>
+                Добро пожаловать, <span class="auth-username">{{ request.user.username }}</span>.
+            </p>
+            <p>
+                <i class="fa fa-gears"></i>
+                <a style="color: white;" href="{% url 'logout' %}"> Выход</a></p>
+            </p>
+        </div>
+    {% endif %}
+

@@ -1,0 +1,23 @@
+{% extends 'main/base_template.html' %}
+{% load static %}
+{% block title %}
+
+    Главная страница
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="flex-column flex-center">
+        <h2 class="page-header">Главная</h2>
+    </div>
+    <hr>
+    <div class="flex-row flex-center flex-gap-25">
+        <img class="main-logo" src="{% static 'main/images/logo.png' %}" alt="">
+        <p class="main-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque cum fugiat harum hic in laudantium, minima nihil nisi nobis obcaecati pariatur quas qui quo quod recusandae saepe soluta vitae.</p>
+    </div>
+    <hr>
+    <div class="flex-row flex-center">
+        <span class="main-text">Арендуйте в свое удовольствие</span>
+    </div>
+{% endblock %}

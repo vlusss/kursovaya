@@ -1,0 +1,17 @@
+{% extends 'main/base_template.html' %}
+{% load static %}
+{% block title %}
+    Заказ
+{% endblock %}
+
+{% block content %}
+    <div class="flex-row flex-center">
+        <h1 class="page-header">Успешное оформление заказа</h1>
+    </div>
+    <div class="flex-column flex-center flex-gap-25">
+        <h3>Заказ№{{ order.id }} успешно оформлен.</h3>
+        <img class="order-success-image" src="{% static 'main/images/success.gif' %}" alt="">
+        <p>Общая сумма заказа: {{ order.total_price }} рублей.</p>
+        <h5>Посмотреть заказ в <a href="{% url 'profile' %}">профиле.</a></h5>
+    </div>
+{% endblock %}

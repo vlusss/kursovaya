@@ -1,0 +1,44 @@
+{% extends 'main/base_template.html' %}
+{% load static %}
+{% block title %}
+    {{ car.car_model }}
+{% endblock %}
+
+{% block content %}
+    <script src="{% static 'main/js/general.js' %}"></script>
+    <div class="flex-column flex-center">
+        <h2 class="page-header">Аренда {{ car.car_model }}</h2>
+    </div>
+    <div class="flex-row flex-center flex-gap-25">
+        <div class="flex-column flex-center flex-gap-10">
+            <h3>{{ car.car_model }}</h3>
+            {% if car.photo %}
+                <img class="car-photo-profile" src="{{ car.photo.url }}" alt="">
+            {% else %}
+                <img class="car-photo-profile" src="{% static 'main/images/default-car.jpg' %}" alt="">
+            {% endif %}
+        </div>
+        <div class="flex-column flex-center flex-gap-10">
+            <form class="flex-column flex-center flex-gap-10" action="{% url 'order' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="car" value="{{ car.id }}">
+                <p class="car-price-profile">Цена (руб./час): <b id="car_price">{{ car.price }}</b></p>
+                <label for="id_rent_time">Время аренды (в минутах):</label>
+                {{ form.rent_time }}
+                <label for="total_price">Общая сумма (руб.):</label>
+                <input class="input-field" id="total_price" name="total_price" type="number" value="0" readonly>
+                <script>
+                    calculate_total_price();
+                </script>
+                {% if request.user.is_authenticated %}
+                    <button class="submit-button" type="submit">Арендовать</button>
+                {% else %}
+                    <a class="ref-no-decor" href="{% url 'registration' %}"><button class="submit-button" type="button">Вход/Регистрация</button></a>
+                {% endif %}
+            </form>
+        </div>
+        <div class="car-description-profile flex-column flex-center">
+            <p>{{ car.description|safe }}</p>
+        </div>
+    </div>
+{% endblock %}

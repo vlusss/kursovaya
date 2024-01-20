@@ -1,0 +1,18 @@
+{% extends 'main/base_template.html' %}
+{% load static %}
+{% block title %}
+
+    Дружочек, ты зашел не в ту дверь.
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="flex-column flex-center flex-gap-25">
+        <h1 class="page-header"> Это не для тебя сделано </h1>
+        <img style="width: 70%;" src="{% static 'main/images/403.jpg' %}" alt="">
+        <h4>Возможно сначала стоит авторизоваться? <a href="{% url 'login' %}">Вход</a></h4>
+    </div>
+
+{% endblock %}

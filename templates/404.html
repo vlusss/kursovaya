@@ -1,0 +1,18 @@
+{% extends 'main/base_template.html' %}
+{% load static %}
+{% block title %}
+
+    Тут пусто...
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="flex-column flex-center flex-gap-25">
+        <h1 class="page-header"> Не та дверь дружок. </h1>
+        <img src="{% static 'main/images/404.gif' %}" alt="">
+        <h4>Здесь ничего нет, уходи.</h4>
+    </div>
+
+{% endblock %}

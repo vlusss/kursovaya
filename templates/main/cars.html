@@ -1,0 +1,31 @@
+{% extends 'main/base_template.html' %}
+{% load static %}
+{% block title %}
+    Выбери свою судьбу
+{% endblock %}
+
+{% block content %}
+    <div class="flex-column flex-center">
+        <h2 class="page-header">Выбери свою <s>машину</s> судьбу.</h2>
+    </div>
+
+    <div class="cars flex-row flex-center flex-gap-25">
+    {% for car in cars %}
+        <a class="ref-no-decor" href="{% url 'car_by_slug' car.slug %}">
+             <div class="car-data flex-column flex-center">
+                 {% if car.photo %}
+                    <img class="car-photo" src="{{ car.photo.url }}" alt="">
+                 {% else %}
+                     <img class="car-photo" src="{% static 'main/images/default-car.jpg' %}" alt="">
+                 {% endif %}
+                 <h4 class="car-model">{{ car.car_model }}</h4>
+                 <p class="car-price">{{ car.price }} руб./час</p>
+                 <div class="box">
+                     Аренда
+                 </div>
+                 <br>
+             </div>
+        </a>
+    {% endfor %}
+    </div>
+{% endblock %}

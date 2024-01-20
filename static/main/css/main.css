@@ -1,0 +1,504 @@
+.wrapper{
+    width: 98vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.navbar{
+    width: 27vw;
+    background: radial-gradient(#a23982,#1f1013);
+    -webkit-overflow-Y: hidden;
+    -moz-overflow-Y: hidden;
+    -o-overflow-Y: hidden;
+    overflow-y: hidden;
+    -webkit-animation: fadeIn 1 1s ease-out;
+    -moz-animation: fadeIn 1 1s ease-out;
+    -o-animation: fadeIn 1 1s ease-out;
+    animation: fadeIn 1 1s ease-out;
+    min-height: 99vh;
+    position: fixed;
+    left: 0;
+    color: white;
+}
+
+.content-bar{
+    min-height: 99vh;
+    width: 70vw;
+    right: 0;
+}
+
+.flex-row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.flex-column{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.flex-center{
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.flex-gap-10{
+    gap: 10px;
+}
+
+.flex-gap-25{
+    gap: 25px;
+}
+
+.flex-gap-100{
+    gap: 100px;
+}
+
+.auth-username{
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.car-photo{
+    height: 250px;
+    border-radius: 40px 40px 0 0;
+}
+
+.car-data{
+    border-radius: 40px;
+    box-shadow: 0 0 10px 0 black;
+    transition: transform 0.3s cubic-bezier(0.18, -2, 0.59, 2), opacity 0.3s cubic-bezier(0.18, -2, 0.59, 2);
+    opacity: 0.8;
+}
+
+.car-data:hover{
+    transform: scale(1.1);
+    opacity: 1.0;
+}
+
+.ref-no-decor{
+    text-decoration: none;
+    color: black;
+}
+
+.submit-button{
+      height: 50px;
+    width: 150px;
+      border: none;
+      border-radius: 40px;
+      font-size: 18px;
+      background-color:black;
+      color: white;
+      padding: 0 10px;
+     font-family: 'Oswald', sans-serif;
+    outline: 0;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.18, -2, 0.59, 2), width 0.8s cubic-bezier(0.18, -2, 0.59, 2);
+}
+
+.submit-button:hover{
+    transform: scale(1.1);
+}
+
+.car-photo-profile{
+    height: 250px;
+    border-radius: 40px;
+}
+
+.car-description-profile{
+    width: 80%;
+}
+
+.car-price-profile{
+    background-color: red;
+    line-height: 40px;
+    color: white;
+    font-family: "Showcard Gothic", emoji;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.input-field{
+      display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+.input-field::placeholder{
+      color: #212529;
+  opacity: 0.4;
+}
+
+.input-field:focus{
+      color: #212529;
+  background-color: #fff;
+  border-color: #bdbdbd;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+.input-field[readonly]{
+    background-color: #f5f5f5;
+  opacity: 1;
+}
+
+.input-field-icon{
+    position: relative;
+}
+
+.input-field-icon .input-field {
+  padding-left: 40px;
+}
+
+.input-field-icon:before{
+    content: '';
+      color: #bdbdbd;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      top: 0;
+      bottom: 0;
+      left: -0.625rem;
+      top: 35%;
+
+
+
+}
+
+.input-field-icon-numbers:before{
+    content: '123';
+}
+
+.input-field-icon-text:before{
+    content: 'T';
+}
+
+.input-field-icon-email:before{
+    content: '@';
+}
+
+.input-field-icon-date:before{
+    content: '📅';
+}
+
+label{
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.light {
+    position: absolute;
+    width: 0px;
+    opacity: .75;
+    background-color: white;
+    box-shadow: #e9f1f1 0px 0px 20px 2px;
+    opacity: 0;
+    top: 100vh;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+.x1{
+  -webkit-animation: floatUp 4s infinite linear;
+  -moz-animation: floatUp 4s infinite linear;
+  -o-animation: floatUp 4s infinite linear;
+  animation: floatUp 4s infinite linear;
+   -webkit-transform: scale(1.0);
+   -moz-transform: scale(1.0);
+   -o-transform: scale(1.0);
+  transform: scale(1.0);
+}
+
+.x2{
+  -webkit-animation: floatUp 7s infinite linear;
+  -moz-animation: floatUp 7s infinite linear;
+  -o-animation: floatUp 7s infinite linear;
+  animation: floatUp 7s infinite linear;
+  -webkit-transform: scale(1.6);
+  -moz-transform: scale(1.6);
+  -o-transform: scale(1.6);
+  transform: scale(1.6);
+  left: 15%;
+}
+
+.x3{
+  -webkit-animation: floatUp 2.5s infinite linear;
+  -moz-animation: floatUp 2.5s infinite linear;
+  -o-animation: floatUp 2.5s infinite linear;
+  animation: floatUp 2.5s infinite linear;
+  -webkit-transform: scale(.5);
+  -moz-transform: scale(.5);
+  -o-transform: scale(.5);
+  transform: scale(.5);
+  left: -15%;
+}
+
+.x4{
+  -webkit-animation: floatUp 4.5s infinite linear;
+  -moz-animation: floatUp 4.5s infinite linear;
+  -o-animation: floatUp 4.5s infinite linear;
+  animation: floatUp 4.5s infinite linear;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  left: -34%;
+}
+
+.x5{
+  -webkit-animation: floatUp 8s infinite linear;
+  -moz-animation: floatUp 8s infinite linear;
+  -o-animation: floatUp 8s infinite linear;
+  animation: floatUp 8s infinite linear;
+  -webkit-transform: scale(2.2);
+  -moz-transform: scale(2.2);
+  -o-transform: scale(2.2);
+  transform: scale(2.2);
+  left: -57%;
+}
+
+.x6{
+  -webkit-animation: floatUp 3s infinite linear;
+  -moz-animation: floatUp 3s infinite linear;
+  -o-animation: floatUp 3s infinite linear;
+  animation: floatUp 3s infinite linear;
+  -webkit-transform: scale(.8);
+  -moz-transform: scale(.8);
+  -o-transform: scale(.8);
+  transform: scale(.8);
+  left: -81%;
+}
+
+.x7{
+  -webkit-animation: floatUp 5.3s infinite linear;
+  -moz-animation: floatUp 5.3s infinite linear;
+  -o-animation: floatUp 5.3s infinite linear;
+  animation: floatUp 5.3s infinite linear;
+  -webkit-transform: scale(3.2);
+  -moz-transform: scale(3.2);
+  -o-transform: scale(3.2);
+  transform: scale(3.2);
+  left: 37%;
+}
+
+.x8{
+  -webkit-animation: floatUp 4.7s infinite linear;
+  -moz-animation: floatUp 4.7s infinite linear;
+  -o-animation: floatUp 4.7s infinite linear;
+  animation: floatUp 4.7s infinite linear;
+  -webkit-transform: scale(1.7);
+  -moz-transform: scale(1.7);
+  -o-transform: scale(1.7);
+  transform: scale(1.7);
+  left: 62%;
+}
+
+.x9{
+  -webkit-animation: floatUp 4.1s infinite linear;
+  -moz-animation: floatUp 4.1s infinite linear;
+  -o-animation: floatUp 4.1s infinite linear;
+  animation: floatUp 4.1s infinite linear;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+  left: 85%;
+}
+
+
+
+@-webkit-keyframes floatUp{
+  0%{top: 100vh; opacity: 0;}
+  25%{opacity: 1;}
+  50%{top: 0vh; opacity: .8;}
+  75%{opacity: 1;}
+  100%{top: -100vh; opacity: 0;}
+}
+@-moz-keyframes floatUp{
+  0%{top: 100vh; opacity: 0;}
+  25%{opacity: 1;}
+  50%{top: 0vh; opacity: .8;}
+  75%{opacity: 1;}
+  100%{top: -100vh; opacity: 0;}
+}
+@-o-keyframes floatUp{
+  0%{top: 100vh; opacity: 0;}
+  25%{opacity: 1;}
+  50%{top: 0vh; opacity: .8;}
+  75%{opacity: 1;}
+  100%{top: -100vh; opacity: 0;}
+}
+@keyframes floatUp{
+  0%{top: 100vh; opacity: 0;}
+  25%{opacity: 1;}
+  50%{top: 0vh; opacity: .8;}
+  75%{opacity: 1;}
+  100%{top: -100vh; opacity: 0;}
+}
+
+@-webkit-keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+@-moz-keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+@-o-keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+@keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+.menu-item a{
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    width: inherit;
+    height: inherit;
+}
+
+
+.menu{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.dash-line{
+    margin: 20px 0;
+	padding: 0;
+	height: 2px;
+	border: none;
+	background: linear-gradient(to right, transparent 50%, #fff 50%),
+				linear-gradient(to right, blue, red);
+	background-size: 16px 2px, 100% 2px;
+}
+
+.menu-item{
+    width: 85%;
+    text-align: start;
+    line-height: 40px;
+    border-radius: 20px 0 0 20px;
+    padding: 10px;
+
+}
+
+.menu-item:hover{
+    transform: scale(1.1);
+    background-color: red;
+}
+
+.page-header {
+  font-family: 'Merriweather', serif;
+  position: relative;
+  color: #C44737;
+  font-size: 50px;
+  font-weight: normal;
+  padding: 8px 20px 7px 20px;
+  border-top: 4px solid;
+  border-left: 4px solid;
+  display: inline-block;
+  line-height: 1;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+.page-header:before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: -28px;
+  left: -28px;
+  border: 4px solid #C44737;
+  box-sizing: border-box;
+}
+
+@media (max-width: 450px) {
+  .page-header {font-size: 36px;}
+  .page-header:before {
+    width: 20px;
+    height: 20px;
+    top: -20px;
+    left: -20px;
+  }
+}
+
+.logo{
+    width: 200px;
+}
+
+.logo-box{
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.main-logo{
+    width: 400px;
+}
+
+.main-info{
+    width: 300px;
+    font-family: Consolas, ui-serif;
+    font-size: 14px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.main-text {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 40px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3em;
+  top: 50%;
+  left: 50%;
+  background-image: linear-gradient(gold, gold);
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+   transition: background-size .7s, background-position .5s ease-in-out;
+    cursor: pointer;
+}
+
+.main-text:hover {
+  background-size: 100% 100%;
+  background-position: 0% 100%;
+  transition: background-position .7s, background-size .5s ease-in-out;
+}
+
+.order-success-image{
+    width: 500px;
+}

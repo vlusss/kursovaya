@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/table.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/button.css' %}">
+    <script src="https://use.fontawesome.com/bd97dbf5ae.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="navbar">
+        {% include 'main/sidebar.html' %}
+        <hr class="dash-line">
+        {% if messages %}
+        	{% for message in messages %}
+          	<div class="alert alert-{{ message.tags }}">
+            	{{ message }}
+          	</div>
+        	{% endfor %}
+        {% endif %}
+    <div class="flex-colum flex-center flex-gap-25 logo-box">
+        <img class="logo" src="{% static 'main/images/logo.png' %}" alt="">
+        <p>© Все права зарегистрированы.</p>
+</div>
+    </div>
+    <div class="content-bar">
+        <hr class="dash-line">
+        {% block content %}
+        {% endblock %}
+        <hr class="dash-line">
+    </div>
+</div>
+
+</body>
+</html>
